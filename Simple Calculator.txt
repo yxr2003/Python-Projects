@@ -1,0 +1,32 @@
+def simple_calculator():
+    while True:
+        try:
+            a = float(input("Enter 1st number: "))
+            b = float(input("Enter 2nd number: "))
+            
+            operation = input("Enter operation:")
+            
+            if operation == "addition":
+                result = a + b
+            elif operation == "subtraction":
+                result = a - b
+            elif operation == "multiplication":
+                result = a * b
+            elif operation == "division":
+                result = a / b
+            else:
+                print("Invalid operation. Please choose addition, subtraction, multiplication, or division.")
+                continue
+                                
+            print("The result is ", result)
+            break
+        
+        except ValueError:
+            print("Invalid input. Please enter a number.")
+        except ZeroDivisionError:
+            print("Cannot divide by zero.")
+        except Exception as e:
+            print("Error:", e)
+
+# Call the function to run the calculator
+simple_calculator()
